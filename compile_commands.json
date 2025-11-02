@@ -1,0 +1,44 @@
+[
+  {
+    "arguments": [
+      "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc",
+      "-g",
+      "-Wall",
+      "-O2",
+      "-mcpu=arm7tdmi",
+      "-mtune=arm7tdmi",
+      "-specs=gba.specs",
+      "-ffreestanding",
+      "-I/opt/devkitpro/libgba/include",
+      "-Isrc",
+      "-c",
+      "-o",
+      "obj/err/err.o",
+      "src/err/err.c"
+    ],
+    "directory": "/home/giygas/code/re/0/decomp",
+    "file": "/home/giygas/code/re/0/decomp/src/err/err.c",
+    "output": "/home/giygas/code/re/0/decomp/obj/err/err.o"
+  },
+  {
+    "arguments": [
+      "/opt/devkitpro/devkitARM/bin/arm-none-eabi-gcc",
+      "-g",
+      "-Wall",
+      "-O2",
+      "-mcpu=arm7tdmi",
+      "-mtune=arm7tdmi",
+      "-specs=gba.specs",
+      "-ffreestanding",
+      "-I/opt/devkitpro/libgba/include",
+      "-Isrc",
+      "-c",
+      "-o",
+      "obj/main.o",
+      "src/main.c"
+    ],
+    "directory": "/home/giygas/code/re/0/decomp",
+    "file": "/home/giygas/code/re/0/decomp/src/main.c",
+    "output": "/home/giygas/code/re/0/decomp/obj/main.o"
+  }
+]
