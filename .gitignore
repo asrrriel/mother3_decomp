@@ -6,3 +6,5 @@ gen/
 rom.elf
 rom.gba
 baserom.gba
+
+compile_commands.json
