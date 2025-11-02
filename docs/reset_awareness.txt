@@ -1,4 +1,4 @@
-Mother 3 (english version v3) soft reset detection:
+Mother 3 (english version v1.3) soft reset detection:
 
 - The game doesn't clear the first 8 bytes of IWRAM on boot
 - The game checks for the ASCII string "M3 GBSON" and sets runtime 0 if present
