@@ -1,4 +1,5 @@
 #include "err.h"
+#include "gba_interrupt.h"
 #include <gba.h>
 #include <stdint.h>
 void bugcheck(err_t err) {
@@ -26,6 +27,7 @@ void bugcheck(err_t err) {
         }
     }
     //die
+    REG_IME = 0;
     while (1);
 
 }

@@ -8,7 +8,8 @@
 #include <gba.h>
 #include "regs.h"
 #include "runtime.h"
-#include <err/err.h>
+#include "subsys/int.h"
+#include <non_canon/err.h>
 #include <stdint.h>
 #include <util/lowlevel.h>
 
@@ -73,6 +74,10 @@ void main() {
 	clear_ram();
 	clear_special_mem();
 	check_reset();
+
+	irqInit(); //libGBA wants this to be here for some reason, maybe it wants cleared RAM :P
+
+	install_ivt1();
 	setup_runtime();
 
 	if ((REG_KEYINPUT & 0x3ff) == 0xf){
@@ -112,6 +117,6 @@ void main_loop(){
 			default:
 				break;
 		}
-		//TODO:interrupt stuff
+		//install_ivt1(); the original refreshed it here but it's not needed with libGBA
 	} while(true);
 }
