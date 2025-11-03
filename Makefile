@@ -1,7 +1,8 @@
-CC     := arm-none-eabi-gcc
-OBJCPY := arm-none-eabi-objcopy
-LD     := arm-none-eabi-ld
-AS     := arm-none-eabi-as
+CC     := $(DEVKITARM)/bin/arm-none-eabi-gcc
+OBJCPY := $(DEVKITARM)/bin/arm-none-eabi-objcopy
+LD     := $(DEVKITARM)/bin/arm-none-eabi-ld
+AS     := $(DEVKITARM)/bin/arm-none-eabi-as
+GBAFIX := $(DEVKITPRO)/tools/bin/gbafix
 
 CFLAGS  := -g -Wall -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -specs=gba.specs -ffreestanding -I$(DEVKITPRO)/libgba/include -Isrc
 LDFLAGS := -L$(DEVKITPRO)/libgba/lib -lgba
@@ -19,6 +20,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 rom: dirs obj/romhdr.o $(C_OBJ)
 	$(LD) -T link.ld -o rom.elf $(shell find obj/ -name "*.o") $(LDFLAGS)
 	$(OBJCPY) -O binary rom.elf rom.gba
+	$(GBAFIX) rom.gba
 
 dirs:
 	mkdir -p obj 
