@@ -9,6 +9,7 @@
 #include "regs.h"
 #include "runtime.h"
 #include "subsys/int.h"
+#include "subsys/rand.h"
 #include <non_canon/err.h>
 #include <stdint.h>
 #include <util/lowlevel.h>
@@ -51,7 +52,7 @@ void plant_reset_magic(){
 void setup_runtime() {
 	runtime.runtime_mode = 0xd;
 	runtime.runtime_flags &= 0xfd;
-	//TODO: mystery table
+	rand_init(4357);
 }
 
 

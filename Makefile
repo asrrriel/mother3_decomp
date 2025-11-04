@@ -17,8 +17,8 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
-rom: dirs obj/romhdr.o $(C_OBJ)
-	$(LD) -T link.ld -o rom.elf $(shell find obj/ -name "*.o") $(LDFLAGS)
+rom: dirs gen/romhdr.o $(C_OBJ)
+	$(LD) -T link.ld -o rom.elf gen/romhdr.o $(shell find obj/ -name "*.o") $(LDFLAGS)
 	$(OBJCPY) -O binary rom.elf rom.gba
 	$(GBAFIX) rom.gba
 
@@ -26,5 +26,5 @@ dirs:
 	mkdir -p obj 
 	mkdir -p gen 
 
-obj/romhdr.o:
-	$(OBJCPY) -I binary -O elf32-littlearm -B arm assets/romhdr.bin obj/romhdr.o --rename-section .data=.hdr
+gen/romhdr.o:
+	$(OBJCPY) -I binary -O elf32-littlearm -B arm assets/romhdr.bin gen/romhdr.o --rename-section .data=.hdr
