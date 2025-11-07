@@ -95,29 +95,34 @@ void main() {
 void main_loop(){
 	do {
 		switch(runtime.runtime_mode){
-			case 0x0:
+			case MODE_NAMING:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0x1:
+			case MODE_UNUSED:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0x2 ... 0x7:
+			case MODE_PLAY_FROM_NEW_GAME:    //fallthru
+			case MODE_PLAY_FROM_CONTINUE: 	 //fallthru
+			case MODE_PLAY_FROM_RESPAWN: 	 //fallthru
+			case MODE_PLAY_FROM_BATTLE_WIN:  //fallthru
+			case MODE_PLAY_FROM_MENU: 	 	 //fallthru
+			case MODE_PLAY_FROM_NEW_CHAPTER: //fallthru
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0x8:
+			case MODE_BATTLE:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0x9:
+			case MODE_FULLSCREEN_MENU:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0xa:
+			case MODE_MAIN_MENU:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0xb:
+			case MODE_CREDITS:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0xc:
+			case MODE_SNDPLYR:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0xd:
+			case MODE_HNS:
 				bugcheck(ERR_UNIMPLEMENTED);
-			case 0xe:
+			case MODE_FT_DISCLAIMER:
 				bugcheck(ERR_UNIMPLEMENTED);
 			default:
 				break;
 		}
-		//install_ivt1(); the original refreshed it here but it's not needed with libGBA
+		install_ivt1();
 	} while(true);
 }
