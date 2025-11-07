@@ -4,3 +4,4 @@ Mother 3 (english version v1.3) soft reset detection:
 - The game checks for the ASCII string "M3 GBSON" and sets runtime 0 if present
 - The game plants this value there on soft reset
 - The game thus knows if it's a cold or warm boot via runtime flag 0
+- This seems to be unused

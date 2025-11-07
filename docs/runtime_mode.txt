@@ -1,0 +1,19 @@
+Mother 3 (english version v1.3) runtime modes:
+
+The variable that holds the runtime mode lives at 0x2004848, and it's 1 byte long.
+It is an enum that represents what "runtime mode" the game is in:
+00 = naming screen
+01 = unused
+02 = gameplay from new game
+03 = gameplay from continue
+04 = gameplay from respawn
+05 = gameplay from battle win
+06 = gameplay from menu
+07 = gameplay from chapter start
+08 = battle
+09 = fullscreen menu
+0A = main menu / logotype
+0B = credits
+0C = music player
+0D = health and safety screen
+0E = fan translation disclaimer
