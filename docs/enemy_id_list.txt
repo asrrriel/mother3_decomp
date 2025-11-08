@@ -1,0 +1,258 @@
+Enemy ID list
+
+0x00: (NULL)
+0x01: Reconstructed Caribou
+0x02: Mr. Passion
+0x03: Oh-So-Snake
+0x04: Clayman
+0x05: Mecha-Drago
+0x06: Pork Tank
+0x07: Mr. Genetor
+0x08: Mole Cricket
+0x09: Eerie Smile (REAL ENEMY GOES HERE)
+0x0A: Bright Smile
+0x0B: Master Porky
+0x0C: N.K. Cyborg
+0x0D: Masked man(Chapter 7)
+0x0E: Fierce Pork Trooper
+0x0F: Fierce Pork Trooper(Rematch!)
+0x10: Jealous Bass
+0x11: Absolutely safe capsule
+0x12: Sticky Slug
+0x13: PORKY 02
+0x14: King Statue
+0x15: Hippo Launcher
+0x16: New Fassad
+0x17: Eerie Smile (REAL ENEMY GOES HERE)
+0x18: Lord Passion
+0x19: Tender Loving Tree
+0x1A: PORKY 03
+0x1B: PORKY 08
+0x1C: Miracle Fassad
+0x1D: Pigmask Major
+0x1E: Great Antlion
+0x1F: Fenomeno
+0x20: Rhinorocket Mark II
+0x21: Frightbot
+0x22: The Squeekz
+0x23: Pyrefly
+0x24: Mecha-Lion
+0x25: Road Block
+0x26: Scamperin' Mushroom
+0x27: Sqawking Boomstick
+0x28: Top Dogfish
+0x29: Mr. Batty
+0x2A: Greedy Mouse
+0x2B: Firefly
+0x2C: Yammonster
+0x2D: Flying Mouse
+0x2E: PORKY 01
+0x2F: Agitated Boar
+0x30: Mighty Bitey Snake
+0x31: Soot Dumpling
+0x32: Baked Yammonster
+0x33: Walking Bushie
+0x34: Carefree Jellyfish
+0x35: Mystery Metal Monkey
+0x36: Crag Lizard
+0x37: Spud Bug
+0x38: Ten-Yeti
+0x39: Chilly Dog
+0x3A: Slimy Slug
+0x3B: Minerali
+0x3C: Ramblin' Mushroom
+0x3D: Mole Cricket(Rematch!)
+0x3E: Boa Transistor
+0x3F: Mischevious Mole
+0x40: Mecha-Mole!
+0x41: Balding Eagle
+0x42: Tree
+0x43: Titany
+0x44: Frosted Bun
+0x45: Mrs. Lava
+0x46: Magman
+0x47: Zombie Man
+0x48: Zombie Dog
+0x49: Ligering Spirit
+0x4A: Mobile Grave
+0x4B: Deatatched Leech
+0x4C: Spineles Lobster
+0x4D: HUGE Pillbug
+0x4E: Cheery Skeleton
+0x4F: Big Bro
+0x50: Barrel Man
+0x51: Strawberry Slime
+0x52: Archnid!
+0x53: Violent Roach
+0x54: Barrier Trio
+0x55: Ghost Armor
+0x56: Ghost Sword
+0x57: Ghost Shield
+0x58: Ghost Knight
+0x59: Osohe Cape
+0x5A: Rockin' Ghost
+0x5B: Pseudoor
+0x5C: Eerie Smile (REAL ENEMY GOES HERE)
+0x5D: Dung Beetle
+0x5E: Great Antlion
+0x5F: Sara-Sara-Sahara
+0x60: Sand Lizard
+0x61: Cactus Wolf
+0x62: Gooey Goo
+0x63: Cleocatra
+0x64: Li'l Big Bro
+0x65: Zombieshroom
+0x66: Stinky Ghost
+0x67: Artsy Ghost
+0x68: Horsantula
+0x69: Pigtunia
+0x6A: Sqawking Stick
+0x6B: Putrid Moldyman
+0x6C: Slitherhen
+0x6D: Whatever
+0x6E: Dogfish
+0x6F: Cattlesnake
+0x70: Einswine
+0x71: Praying Mantis
+0x72: Ancient Dragonfly
+0x73: Filthy Attack Roach
+0x74: Muttshroom
+0x75: Mecha-Turtle
+0x76: Bro Team
+0x77: Batangutan
+0x78: Ostrelephant
+0x79: Sky Titany
+0x7A: Monkalrus
+0x7B: Parental Kangashark
+0x7C: Li'l Miss Marshmallow
+0x7D: Almsot Mecha-Lion
+0x7E: Rhinorocket
+0x7F: Wound-Up Road Hog
+0x80: Metal Attack Roach
+0x81: Really Flying Mouse
+0x82: Short circuit Zap
+0x83: Minor Robot
+0x84: Love Walker
+0x85: Eerie Smile (REAL ENEMY GOES HERE)
+0x86: Atomic Power Robot
+0x87: Nuclear Reactor Robot
+0x88: Negative Man
+0x89: Heftyhead
+0x8A: Nice Poser
+0x8B: Big Spud Bug
+0x8C: Grated Yammonster
+0x8D: Hippo Launcher(AGAIN????)
+0x8E: Steel Mechorilla
+0x8F: Zombidillo
+0x90: Fish Roe Man
+0x91: PORKY 07
+0x92: Return of Octobot
+0x93: Carpte Monster
+0x94: Recon Mech
+0x95: Pigmask
+0x96: Zombie Lady
+0x97: Naughty Mushroom
+0x98: Elder Batty
+0x99: Arachnid!!!
+0x9A: Greedier Mouse
+0x9B: Gently Weeping Guitar
+0x9C: Beaten Drum
+0x9D: Reconstructed Mole
+0x9E: Reconstructed Lion
+0x9F: Wobby Robot
+0xA0: Men's Room Sign
+0xA1: Scrapped Robot
+0xA2: Forlorn Junk Heap
+0xA3: Surprise Box
+0xA4: Battery Man
+0xA5: Screwloose
+0xA6: Cuddle Bomb
+0xA7: K9000
+0xA8: Alkaline Man
+0xA9: PORKY 06
+0xAA: Pigmask Major
+0xAB: Pigmask Colonel
+0xAC: Pigmask Captain
+0xAD: Navy SQUEAL
+0xAE: Master Eddy
+0xAF: Rock Lobster
+0xB0: Rooound Fish
+0xB1: Blue Balding Eagle
+0xB2: Security Robot
+0xB3: Unwelcome Gust
+0xB4: PORKY 09
+0xB5: PORKY 10
+0xB6: Titanian
+0xB7: Upgraded Robot
+0xB8: Beanling
+0xB9: Black Beanling
+0xBA: Tiny Forest
+0xBB: PORKY 04
+0xBC: PORKY 05
+0xBD: Masked Man (FINAL BATTLE/PHASE 1)
+0xBE: Masked Man (FINAL BATTLE/PHASE 2)
+0xBF: (EMPTY) (GARBAGE DATA)
+0xC0: Pick (GARBAGE DATA)
+0xC1: Antlion (GARBAGE DATA)
+0xC2: Fierce Pork Trooper (GARBAGE DATA)
+0xC3: Crab (GARBAGE DATA)
+0xC4: Electric Catfish (GARBAGE DATA)
+0xC5: Shimmy Zmizz (GARBAGE DATA)
+0xC6: Magic (GARBAGE DATA)
+0xC7: Duster (GARBAGE DATA)
+0xC8: Keyboard (GARBAGE DATA)
+0xC9: OJ (GARBAGE DATA)
+0xCA: Robot (GARBAGE DATA)
+0xCB: Dung Beetle (GARBAGE DATA)
+0xCC: Tent Person (GARBAGE DATA)
+0xCD: Snow Bunny (GARBAGE DATA)
+0xCE: Clayman (GARBAGE DATA)
+0xCF: Vapor (GARBAGE DATA)
+0xD0: Rope Snake (GARBAGE DATA)
+0xD1: Rope Snake (With eerie claus face) (GARBAGE DATA)
+0xD2: Aeolia's Table (GARBAGE DATA)
+0xD3: Straw (GARBAGE DATA)
+0xD4: Vapor 2 (GARBAGE DATA)
+0xD5: Mini Elevator (GARBAGE DATA)
+0xD6: Drago (GARBAGE DATA)
+0xD7: Fierce Pork Trooper (GARBAGE DATA)
+0xD8: Green Train (GARBAGE DATA)
+0xD9: Pump Drago (GARBAGE DATA)
+0xDA: Three Amigos (GARBAGE DATA)
+0xDB: Flower (GARBAGE DATA)
+0xDC: Rope Ladder (GARBAGE DATA)
+0xDD: Flame 3 (GARBAGE DATA)
+0xDE: Flag (GARBAGE DATA)
+0xDF: Ropeway (GARBAGE DATA)
+0xE0: (EMPTY) (GARBAGE DATA)
+0xE1: Piece (GARBAGE DATA)
+0xE2: Flame 1 (GARBAGE DATA)
+0xE3: Lotus Root (GARBAGE DATA)
+0xE4: Unworked Clay (GARBAGE DATA)
+0xE5: Explosion (GARBAGE DATA)
+0xE6: Smoke (GARBAGE DATA)
+0xE7: Statue Head (GARBAGE DATA)
+0xE8: Carousel (GARBAGE DATA)
+0xE9: Nippo's Dresser (GARBAGE DATA)
+0xEA: Firefly Swarm (GARBAGE DATA)
+0xEB: Hinawa's Cloth (GARBAGE DATA)
+0xEC: Electric Catfish (GARBAGE DATA)
+0xED: Broom (GARBAGE DATA)
+0xEE: Fish (GARBAGE DATA)
+0xEF: Sea Urchin (GARBAGE DATA)
+0xF0: Train (GARBAGE DATA)
+0xF1: Sign (GARBAGE DATA)
+0xF2: Sign (GARBAGE DATA)
+0xF3: (EMPTY) (GARBAGE DATA)
+0xF4: Portrait (GARBAGE DATA)
+0xF5: Friendly Ghost(GARBAGE DATA)
+0xF6: Trash Can (GARBAGE DATA)
+0xF7: Steel Ball (GARBAGE DATA)
+0xF8: Egg of Light (GARBAGE DATA)
+0xF9: Chestnut (GARBAGE DATA)
+0xFA: Rockin' Ghost (GARBAGE DATA)
+0xFB: Candle (GARBAGE DATA)
+0xFC: Mouse (GARBAGE DATA)
+0xFD: Energy Machine (GARBAGE DATA)
+0xFE: Light Blade (GARBAGE DATA)
+0xFF: Wine Glass (GARBAGE DATA)
