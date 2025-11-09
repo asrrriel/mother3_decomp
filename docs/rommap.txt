@@ -556,6 +556,6 @@
 
 ==End of ROM==
 0x1F447A0 - 0x1F44F07 = Unclassified data
-0x1F44F08 - 0x1F85F9F = VTables
-0x1F85FA0 - 0x1FDFFFF = Blank 
+0x1F44F08 - 0x1F86008 = VTables
+0x1F86009 - 0x1FDFFFF = Blank 
 0x1FE0000 - 0x1FFFFFF = Unclassified data
