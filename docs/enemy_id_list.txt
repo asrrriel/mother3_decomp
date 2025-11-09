@@ -1,40 +1,40 @@
 Enemy ID list
 
 0x00: (NULL)
-0x01: Reconstructed Caribou
-0x02: Mr. Passion
-0x03: Oh-So-Snake
-0x04: Clayman
-0x05: Mecha-Drago
-0x06: Pork Tank
-0x07: Mr. Genetor
-0x08: Mole Cricket
-0x09: Eerie Smile (REAL ENEMY GOES HERE)
+0x01: Reconstructed Caribou (MINIBOSS)
+0x02: Mr. Passion (MINIBOSS)
+0x03: Oh-So-Snake (CHAPTER BOSS)
+0x04: Clayman (MINIBOSS)
+0x05: Mecha-Drago (CHAPTER BOSS)
+0x06: Pork Tank (CHAPTER BOSS)
+0x07: Mr. Genetor (CHAPTER BOSS)
+0x08: Mole Cricket 
+0x09: Eerie Smile (Monkalrus)
 0x0A: Bright Smile
-0x0B: Master Porky
-0x0C: N.K. Cyborg
-0x0D: Masked man(Chapter 7)
-0x0E: Fierce Pork Trooper
-0x0F: Fierce Pork Trooper(Rematch!)
-0x10: Jealous Bass
-0x11: Absolutely safe capsule
+0x0B: Master Porky (FINAL BOSS)
+0x0C: N.K. Cyborg (BOSS)
+0x0D: Masked man (CHAPTER BOSS) (Chapter 7)
+0x0E: Fierce Pork Trooper (BOSS)
+0x0F: Fierce Pork Trooper (BOSS) (Rematch!)
+0x10: Jealous Bass (MINIBOSS)
+0x11: Absolutely safe capsule (BOSS)
 0x12: Sticky Slug
 0x13: PORKY 02
-0x14: King Statue
+0x14: King Statue (SECRET BOSS)
 0x15: Hippo Launcher
-0x16: New Fassad
-0x17: Eerie Smile (REAL ENEMY GOES HERE)
-0x18: Lord Passion
+0x16: New Fassad (BOSS)
+0x17: Eerie Smile (Titanian)
+0x18: Lord Passion (SECRET BOSS)
 0x19: Tender Loving Tree
 0x1A: PORKY 03
 0x1B: PORKY 08
-0x1C: Miracle Fassad
+0x1C: Miracle Fassad (BOSS)
 0x1D: Pigmask Major
 0x1E: Great Antlion
 0x1F: Fenomeno
 0x20: Rhinorocket Mark II
 0x21: Frightbot
-0x22: The Squeekz
+0x22: The Squeekz (MINIBOSS)
 0x23: Pyrefly
 0x24: Mecha-Lion
 0x25: Road Block
@@ -53,7 +53,7 @@ Enemy ID list
 0x32: Baked Yammonster
 0x33: Walking Bushie
 0x34: Carefree Jellyfish
-0x35: Mystery Metal Monkey
+0x35: Mystery Metal Monkey (SECRET BOSS)
 0x36: Crag Lizard
 0x37: Spud Bug
 0x38: Ten-Yeti
@@ -61,7 +61,7 @@ Enemy ID list
 0x3A: Slimy Slug
 0x3B: Minerali
 0x3C: Ramblin' Mushroom
-0x3D: Mole Cricket(Rematch!)
+0x3D: Mole Cricket (Rematch!)
 0x3E: Boa Transistor
 0x3F: Mischevious Mole
 0x40: Mecha-Mole!
@@ -84,20 +84,20 @@ Enemy ID list
 0x51: Strawberry Slime
 0x52: Archnid!
 0x53: Violent Roach
-0x54: Barrier Trio
-0x55: Ghost Armor
-0x56: Ghost Sword
-0x57: Ghost Shield
-0x58: Ghost Knight
+0x54: Barrier Trio (BOSS)
+0x55: Ghost Armor (SECRET BOSS)
+0x56: Ghost Sword (SECRET BOSS)
+0x57: Ghost Shield (SECRET BOSS)
+0x58: Ghost Knight (SECRET BOSS)
 0x59: Osohe Cape
 0x5A: Rockin' Ghost
 0x5B: Pseudoor
-0x5C: Eerie Smile (REAL ENEMY GOES HERE)
+0x5C: Eerie Smile (Zombieshroom) (BOSS)
 0x5D: Dung Beetle
-0x5E: Great Antlion
+0x5E: Great Antlion (AGAIN???)
 0x5F: Sara-Sara-Sahara
 0x60: Sand Lizard
-0x61: Cactus Wolf
+0x61: Cactus Wolf (MINIBOSS)
 0x62: Gooey Goo
 0x63: Cleocatra
 0x64: Li'l Big Bro
@@ -124,8 +124,8 @@ Enemy ID list
 0x79: Sky Titany
 0x7A: Monkalrus
 0x7B: Parental Kangashark
-0x7C: Li'l Miss Marshmallow
-0x7D: Almsot Mecha-Lion
+0x7C: Li'l Miss Marshmallow (SECRET BOSS)
+0x7D: Almsot Mecha-Lion (MINIBOSS)
 0x7E: Rhinorocket
 0x7F: Wound-Up Road Hog
 0x80: Metal Attack Roach
@@ -133,21 +133,21 @@ Enemy ID list
 0x82: Short circuit Zap
 0x83: Minor Robot
 0x84: Love Walker
-0x85: Eerie Smile (REAL ENEMY GOES HERE)
+0x85: Eerie Smile (Ancient Dragonfly)
 0x86: Atomic Power Robot
 0x87: Nuclear Reactor Robot
-0x88: Negative Man
+0x88: Negative Man (SECRET BOSS)
 0x89: Heftyhead
 0x8A: Nice Poser
 0x8B: Big Spud Bug
 0x8C: Grated Yammonster
-0x8D: Hippo Launcher(AGAIN????)
-0x8E: Steel Mechorilla
+0x8D: Hippo Launcher (AGAIN??)
+0x8E: Steel Mechorilla (BOSS)
 0x8F: Zombidillo
 0x90: Fish Roe Man
 0x91: PORKY 07
 0x92: Return of Octobot
-0x93: Carpte Monster
+0x93: Carpet Monster
 0x94: Recon Mech
 0x95: Pigmask
 0x96: Zombie Lady
@@ -162,35 +162,35 @@ Enemy ID list
 0x9F: Wobby Robot
 0xA0: Men's Room Sign
 0xA1: Scrapped Robot
-0xA2: Forlorn Junk Heap
+0xA2: Forlorn Junk Heap (MINIBOSS)
 0xA3: Surprise Box
 0xA4: Battery Man
 0xA5: Screwloose
 0xA6: Cuddle Bomb
 0xA7: K9000
-0xA8: Alkaline Man
+0xA8: Alkaline Man (UNUSED)
 0xA9: PORKY 06
 0xAA: Pigmask Major
 0xAB: Pigmask Colonel
 0xAC: Pigmask Captain
 0xAD: Navy SQUEAL
-0xAE: Master Eddy
+0xAE: Master Eddy (MINIBOSS)
 0xAF: Rock Lobster
 0xB0: Rooound Fish
 0xB1: Blue Balding Eagle
 0xB2: Security Robot
-0xB3: Unwelcome Gust
+0xB3: Unwelcome Gust (Creator's fav)
 0xB4: PORKY 09
 0xB5: PORKY 10
 0xB6: Titanian
 0xB7: Upgraded Robot
 0xB8: Beanling
 0xB9: Black Beanling
-0xBA: Tiny Forest
+0xBA: Tiny Forest (UNUSED)
 0xBB: PORKY 04
 0xBC: PORKY 05
-0xBD: Masked Man (FINAL BATTLE/PHASE 1)
-0xBE: Masked Man (FINAL BATTLE/PHASE 2)
+0xBD: Masked Man (GLORIFIED CUTSCENE/PHASE 1)
+0xBE: Masked Man (GLORIFIED CUTSCENE/PHASE 2)
 0xBF: (EMPTY) (GARBAGE DATA)
 0xC0: Pick (GARBAGE DATA)
 0xC1: Antlion (GARBAGE DATA)
