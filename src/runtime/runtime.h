@@ -26,6 +26,19 @@ typedef struct{
     uint8_t runtime_flags;
 } runtime_t;
 
+void rt_mode_naming();
+void rt_mode_unused();
+void rt_mode_gameplay();
+void rt_mode_battle();
+void rt_mode_menu();
+void rt_mode_main_menu();
+void rt_mode_credits();
+void rt_mode_sndplyr();
+void rt_mode_hns();
+void rt_mode_ft_disclaimer();
+
+void runtime_dispatch();
+
 extern runtime_t runtime;
 
 #endif // __RUNTIME_H__

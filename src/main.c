@@ -1,6 +1,6 @@
 #include <gba.h>
 #include <regs.h>
-#include <runtime.h>
+#include <runtime/runtime.h>
 #include <subsys/rand.h>
 #include <non_canon/err.h>
 #include <non_canon/int.h>
@@ -56,8 +56,6 @@ void do_soft_reset() {
 	SoftReset(0);
 }
 
-void main_loop();
-
 void main() {
 	//set up registers
 	REG_WAITCNT  = 0x45b4;
@@ -80,42 +78,7 @@ void main() {
 
 	//TODO: rest of initialization
 
-	main_loop();
+	runtime_dispatch();
 
 	do_soft_reset();
-}
-
-void main_loop(){
-	do {
-		switch(runtime.runtime_mode){
-			case MODE_NAMING:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_UNUSED:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_PLAY_FROM_NEW_GAME:    //fallthru
-			case MODE_PLAY_FROM_CONTINUE: 	 //fallthru
-			case MODE_PLAY_FROM_RESPAWN: 	 //fallthru
-			case MODE_PLAY_FROM_BATTLE_WIN:  //fallthru
-			case MODE_PLAY_FROM_MENU: 	 	 //fallthru
-			case MODE_PLAY_FROM_NEW_CHAPTER: //fallthru
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_BATTLE:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_FULLSCREEN_MENU:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_MAIN_MENU:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_CREDITS:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_SNDPLYR:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_HNS:
-				bugcheck(ERR_UNIMPLEMENTED);
-			case MODE_FT_DISCLAIMER:
-				bugcheck(ERR_UNIMPLEMENTED);
-			default:
-				break;
-		}
-		install_ivt1();
-	} while(true);
 }
