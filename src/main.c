@@ -8,9 +8,9 @@
 #include <gba.h>
 #include "regs.h"
 #include "runtime.h"
-#include "subsys/int.h"
 #include "subsys/rand.h"
 #include <non_canon/err.h>
+#include <non_canon/int.h>
 #include <stdint.h>
 #include <util/lowlevel.h>
 
