@@ -1,14 +1,7 @@
-#include "gba_dma.h"
-#include "gba_input.h"
-#include "gba_interrupt.h"
-#include "gba_sio.h"
-#include "gba_sound.h"
-#include "gba_systemcalls.h"
-#include "gba_video.h"
 #include <gba.h>
-#include "regs.h"
-#include "runtime.h"
-#include "subsys/rand.h"
+#include <regs.h>
+#include <runtime.h>
+#include <subsys/rand.h>
 #include <non_canon/err.h>
 #include <non_canon/int.h>
 #include <stdint.h>
