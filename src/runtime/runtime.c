@@ -15,7 +15,7 @@ void runtime_dispatch(){
                 //TODO: if (main_menu_outcome != 6) mode_menu();
                 goto start_game;
 			case MODE_UNUSED:
-				rt_mode_naming();
+				rt_mode_unused();
                 rt_mode_gameplay();
                 start_game:
                 runtime.runtime_mode = MODE_PLAY_FROM_NEW_GAME;
