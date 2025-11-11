@@ -179,7 +179,7 @@ Enemy ID list
 0xB0: Rooound Fish
 0xB1: Blue Balding Eagle
 0xB2: Security Robot
-0xB3: Unwelcome Gust (Creator's fav)
+0xB3: Unwelcome Gust
 0xB4: PORKY 09
 0xB5: PORKY 10
 0xB6: Titanian
