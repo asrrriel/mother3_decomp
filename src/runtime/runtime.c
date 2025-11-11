@@ -6,6 +6,7 @@
 //note: while you may call this "main_loop", 
 //that is incorrect as this is not the main frame loop, 
 //instead the mode functions only return when they try to switch modes
+//original addr: 0x080002e0
 void runtime_dispatch(){
 	do {
 		switch(runtime.runtime_mode){

@@ -10,18 +10,20 @@
 runtime_t runtime;
 const char reset_check_str[8] = "M3 GBSON";
 
+//original addr: 0x08000e0c
 void clear_ram(){
 	do_dma_clear((void*)0x2000000,0x40000); // EWRAM
 	do_dma_clear((void*)0x3000008,0x7d98);  // IWRAM
 }
 
-void clear_special_mem(){
+//original addr: 0x08000e30
+void clear_graphics_mem(){
 	do_swi_clear((void*)0x6000000,0x18000); // VRAM
 	do_swi_clear((void*)0x5000000,0x400);	// Palette RAM
 	do_swi_clear((void*)0x7000000,0x400);   // OAM
 }
 
-//reset awareness, for returning to title screen
+//original addr: 0x08000dc0
 void check_reset(){
 	char* iwram = (char*)0x3000000;
 
@@ -34,6 +36,7 @@ void check_reset(){
 	runtime.runtime_flags |= 1;
 }
 
+//original addr: 0x08000d88
 void plant_reset_magic(){
 	char* iwram = (char*)0x3000000;
 
@@ -42,13 +45,15 @@ void plant_reset_magic(){
 	}
 }
 
+//original addr: 0x080008e0
 void setup_runtime() {
 	runtime.runtime_mode = 0xd;
 	runtime.runtime_flags &= 0xfd;
 	rand_init(4357);
 }
 
-
+//TODO: match functionality exactly
+//original addr: 0x08001718
 void do_soft_reset() {
 	plant_reset_magic();
 	REG_SOUNDCNT_X = 0;
@@ -56,6 +61,7 @@ void do_soft_reset() {
 	SoftReset(0);
 }
 
+//original addr: 0x08000264
 void main() {
 	//set up registers
 	REG_WAITCNT  = 0x45b4;
@@ -64,7 +70,7 @@ void main() {
 	REG_SIOCNT   = 0x2000;
 
 	clear_ram();
-	clear_special_mem();
+	clear_graphics_mem();
 	check_reset();
 
 	irqInit(); //libGBA wants this to be here for some reason, maybe it wants cleared RAM :P
