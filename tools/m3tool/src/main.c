@@ -1,80 +1,58 @@
 #include <stddef.h>
 #include <stdio.h>
 #include <stdint.h>
+#include <stdbool.h>
 #include <endian.h>
 
-#define ROMHDR_FIXED        0x96
+#include <stdlib.h>
+#include <string.h>
+#include <structs.h>
 
-typedef struct {
-    uint32_t entry_instr;
-    uint8_t  nintendo_logo[0x9c];
-    char     title[0xC];
-    char     game_code[4];
-    char     maker_code[2];
-    uint8_t  mandatory_val;
-    uint8_t  unit_code;
-    uint8_t  device_type;
-    uint8_t  reserved[7];
-    uint8_t  complement;
-    uint8_t  reserved2;
-} romhdr_t;
+bool check_rom(FILE* f){
+    //read rom header
+    romhdr_t hdr;
+    fread(&hdr, sizeof(romhdr_t), 1, f);
 
-#define ENEMY_ORDER_OFF     0xC6B64
-#define ENEMY_ORDER_ENTRIES 0xFF
+    //check if its a valid rom
+    if(hdr.reserved2 != 0 ||
+        hdr.mandatory_val != ROMHDR_FIXED){
+        return false;
+    }
 
-#define ENEMY_DATA_OFF   	0xD0D28
-#define ENEMY_DATA_ENTRIES  0x100
+    //TODO: complement check
 
-typedef struct {
-    uint32_t enemy_id;
-    uint32_t smell_type;
-    uint16_t overworld_sound;
-    uint16_t background;
-    uint16_t transition_music;
-    uint16_t battle_music;
-    uint16_t win_music;
-    uint16_t level;
-    uint32_t hp;
-    uint32_t pp;
-    uint8_t  offense;
-    uint8_t  defense;
-    uint8_t  iq;
-    uint8_t  speed;
-    uint32_t kindness;
-    uint8_t  suprise_offense;
-    uint8_t  suprise_defense;
-    uint8_t  suprise_iq;
-    uint8_t  suprise_speed;
-    uint32_t suprise_kindness;
-    uint8_t  wakness_table[0x28];
-    uint8_t  action_table[0x10];
-    uint16_t attack_sound;
-    uint8_t  encounter_text;
-    uint8_t  defeat_text;
-    uint32_t defeat_animation;
-    uint32_t battle_spr_height;
-    uint8_t  memory_spr_height_front;
-    uint8_t  memory_spr_height_back;
-    uint8_t  battle_spr_height_front;
-    uint8_t  battle_spr_height_back;
-    uint8_t  memory_can_turn;
-    uint8_t  battle_can_turn;
-    uint16_t last_defeat_anim;
-    uint8_t  drop_tbl[0xC];
-    uint32_t drop_exp;
-    uint32_t drop_money;
-    uint32_t smell_weakness;
-} enemy_t;
+    //check if its mother 3
+    if(strncmp(hdr.title, "MOTHER3",7) != 0 ||
+        strncmp(hdr.game_code, "A3UJ",4) != 0 ||
+        strncmp(hdr.maker_code, "01",2) != 0){
+        return false;
+    }
 
-#define MUSIC_ORDER_OFF   	0xECD40
-#define MUSIC_ORDER_ENTRIES 0x100
+    //get ROM size
+    fseek(f, 0, SEEK_END);
+    uint32_t size = ftell(f);
 
-typedef struct {
-    uint16_t song_ptr;
-    uint16_t music_player_num;
-    uint32_t required_chapter;
-    uint32_t duration;
-} music_t;
+    //must be a 32meg cart
+    if (size != 33554432){
+        return false;
+    }
+
+    //check for layout clues
+    char m3_gbson[8];
+    char mother3[7];
+    fseek(f, 0xCDB8A8, SEEK_SET);
+    fread(m3_gbson, 1, 8, f);
+    fseek(f, 0x66570, SEEK_SET);
+    fread(mother3, 1, 7, f);
+
+    if(strncmp(m3_gbson, "M3 GBSON",8) != 0 ||
+        strncmp(mother3, "mother3",7) != 0) {
+        return false;
+    }
+
+    return true;
+}
+
 
 void print_enemy_order(FILE* f){
     fseek(f,ENEMY_ORDER_OFF,SEEK_SET);
@@ -142,7 +120,7 @@ void print_music_order(FILE* f){
         printf("  Song ptr:                 0x%x\n",entry.song_ptr);
         printf("  Music player num:         %u\n",entry.music_player_num);
         printf("  Required chapter:         0x%x\n",entry.required_chapter);
-        printf("  Duration(unit?):        0x%x\n",entry.duration);
+        printf("  Duration(unit?):          0x%x\n",entry.duration);
     }
 
 }
@@ -155,21 +133,13 @@ int main(int argc, char** argv){
 
     FILE* f = fopen(argv[1],"rb");
 
-    romhdr_t hdr;
+    if(!check_rom(f)){
+        printf("Error: This doesn't seem to be an english v1.3 mother 3 ROM\n");
+        fclose(f);
+        exit(1);
+    }
 
-    fread(&hdr, sizeof(romhdr_t), 1, f);
-
-    printf("ROM title: \"%s\"\n",hdr.title);
-    printf("ROM game code: \"%.*s\"\n",4,hdr.game_code);
-    printf("ROM maker code: \"%.*s\"\n",2,hdr.maker_code);
-    printf("ROM unit code: 0x%x\n",hdr.unit_code);
-    printf("ROM device type: 0x%x\n\n",hdr.device_type);
-
-    fseek(f, 0, SEEK_END);
-    uint32_t size = ftell(f);
-    printf("ROM size: %uM\n",size / 1000000);
-
-    print_enemy_order(f);
+    //print_enemy_order(f);
     //print_enemy_data(f);
     print_music_order(f);
 
