@@ -1,0 +1,24 @@
+the menu mode is stored at 0x02004100, it is used both by the naming screen(0x0) and the full scren menu(0x9)
+values:
+    0x0: goods menu
+    0x1: equip menu
+    0x2: psi menu
+    0x3: status menu
+    0x4: battle memory
+    0x5: shop
+    0x6: item guy
+    0x7: save screen
+    0x8: load screen
+    0x9: erase all screen
+    0xA: save is corrupt screen
+    0xB: initial(new game) naming screen
+    0xC: subsequent naming screens
+    0xD: game over screen
+
+the naming screen ID(0x02004101) is used by all non-initial naming screens to determine which one it is
+values:
+    0x0: Duster
+    0x1: Salsa
+    0x2: Kumatora
+    0x3: player (sanctuary)
+    0x4: player (factory)
