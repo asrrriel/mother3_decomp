@@ -6,7 +6,7 @@
 #include <non_canon/err.h>
 
 void __int_vblank(){
-    bugcheck(ERR_TEST_FAIL);
+    //bugcheck(ERR_TEST_FAIL);
     return; //TODO
 }
 

@@ -5,7 +5,7 @@ AS     := $(DEVKITARM)/bin/arm-none-eabi-as
 GBAFIX := $(DEVKITPRO)/tools/bin/gbafix
 
 CFLAGS  := -g -Wall -O2 -mcpu=arm7tdmi -mtune=arm7tdmi -specs=gba.specs -ffreestanding -I$(DEVKITPRO)/libgba/include -Isrc
-LDFLAGS := -L$(DEVKITPRO)/libgba/lib -lgba
+LDFLAGS := -L$(DEVKITPRO)/libgba/lib -L$(DEVKITARM)/lib/gcc/arm-none-eabi/15.1.0/ -lgba -lgcc
 
 SRC_DIR = src
 OBJ_DIR = obj

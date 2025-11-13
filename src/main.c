@@ -47,7 +47,7 @@ void plant_reset_magic(){
 
 //original addr: 0x080008e0
 void setup_runtime() {
-	runtime.runtime_mode = 0xd;
+	runtime.runtime_mode = MODE_HNS;
 	runtime.runtime_flags &= 0xfd;
 	rand_init(4357);
 }
@@ -81,6 +81,8 @@ void main() {
 	if ((REG_KEYINPUT & 0x3ff) == 0xf){
 		runtime.runtime_flags |= 2;
 	}
+
+	bugcheck(10 / 2); //TODO: remove libgcc test
 
 	//TODO: rest of initialization
 
