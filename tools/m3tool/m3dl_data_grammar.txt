@@ -1,0 +1,21 @@
+==SYNTACTICAL==
+
+dfile -> declaration*
+
+delcaration -> (enum | table) ";"
+
+enum -> "enum" STR "{" ((enum_elem,) | enum_elem)* "}"
+
+table -> "table" STR "{" ((table_elem,) | table_elem)* "}"
+
+enum_elem -> STR ( "=" number )
+
+table_elem -> STR | str_lit | number
+
+==LEXICAL==
+
+str_lit -> '"' STR '"'
+number -> ("0" ("x" | "o" | "b" ))? NUMSTR
+
+STR = string of any number of ascii characters
+NUMSTR = string of any number of numeric ascii characters
