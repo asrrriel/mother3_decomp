@@ -14,3 +14,4 @@ The party is stored at $02004860, it is 5 bytes long each byte means a member:
 0xB: Alec (non-playable)
 0xC: Fassad (non-playable)
 0xD: Claus
+Party member attributes start at $02004110
