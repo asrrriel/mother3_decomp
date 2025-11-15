@@ -1,18 +1,20 @@
 ==SYNTACTICAL==
 
-dfile -> declaration*
+dfile -> stmt*
 
-delcaration -> (enum | table) ";"
+stmt -> STR "=" expr
 
-enum -> "enum" STR "{" ((enum_elem,) | enum_elem)* "}"
+expr -> type_kw "{" ((table_elem,) | table_elem)* "}" | prim_stmt
 
-table -> "table" STR "{" ((table_elem,) | table_elem)* "}"
+elem        -> prim_stmt | enum_elem
+enum_elem   -> STR ( "=" number )
+struct_elem -> STR ":" expr
 
-enum_elem -> STR ( "=" number )
-
-table_elem -> STR | str_lit | number
+prim_stmt -> STR | str_lit | number
 
 ==LEXICAL==
+
+type_kw -> "table" | "struct" | "enum"
 
 str_lit -> '"' STR '"'
 number -> ("0" ("x" | "o" | "b" ))? NUMSTR
