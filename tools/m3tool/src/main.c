@@ -141,7 +141,7 @@ int main(int argc, char** argv){
 
     //print_enemy_order(f);
     //print_enemy_data(f);
-    print_music_order(f);
+    //print_music_order(f);
 
 
     fclose(f);
