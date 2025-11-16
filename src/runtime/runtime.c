@@ -6,10 +6,10 @@
 //note: while you may call this "main_loop", 
 //that is incorrect as this is not the main frame loop, 
 //instead the mode functions only return when they try to switch modes
-//original addr: 0x080002e0
+//original addr: $080002e0
 void runtime_dispatch(){
 	do {
-		switch(runtime.runtime_mode){
+		switch(runtime.mode){
 			case MODE_NAMING:
                 rt_mode_naming();
                 rt_mode_gameplay();
@@ -19,7 +19,7 @@ void runtime_dispatch(){
 				rt_mode_unused();
                 rt_mode_gameplay();
                 start_game:
-                runtime.runtime_mode = MODE_PLAY_FROM_NEW_GAME;
+                runtime.mode = MODE_PLAY_FROM_NEW_GAME;
                 //gameplay_mode = MODE_NEW_GAME;
                 break;
 			case MODE_PLAY_FROM_NEW_GAME:    //fallthru

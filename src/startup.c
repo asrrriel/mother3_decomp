@@ -1,7 +1,7 @@
 void main();
 
 //dumb BS
-//original addr: 0x080000c0
+//original addr: $080000c0
 void _start(void) __attribute__((section(".text.startup"),naked, used));
 void _start() 
 {

@@ -3,6 +3,9 @@
 obj/
 gen/
 
+# fuck copyright
+assets/ 
+
 rom.elf
 rom.gba
 baserom.gba

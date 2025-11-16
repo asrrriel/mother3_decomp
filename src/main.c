@@ -10,33 +10,33 @@
 runtime_t runtime;
 const char reset_check_str[8] = "M3 GBSON";
 
-//original addr: 0x08000e0c
+//original addr: $08000e0c
 void clear_ram(){
 	do_dma_clear((void*)0x2000000,0x40000); // EWRAM
 	do_dma_clear((void*)0x3000008,0x7d98);  // IWRAM
 }
 
-//original addr: 0x08000e30
+//original addr: $08000e30
 void clear_graphics_mem(){
 	do_swi_clear((void*)0x6000000,0x18000); // VRAM
 	do_swi_clear((void*)0x5000000,0x400);	// Palette RAM
 	do_swi_clear((void*)0x7000000,0x400);   // OAM
 }
 
-//original addr: 0x08000dc0
+//original addr: $08000dc0
 void check_reset(){
 	char* iwram = (char*)0x3000000;
 
 	for(int i = 0; i < 8; i++){
 		if(iwram[i] != reset_check_str[i]){
-			runtime.runtime_flags &=  0xfe;
+			runtime.flags &=  0xfe;
 			return;
 		}
 	}
-	runtime.runtime_flags |= 1;
+	runtime.flags |= 1;
 }
 
-//original addr: 0x08000d88
+//original addr: $08000d88
 void plant_reset_magic(){
 	char* iwram = (char*)0x3000000;
 
@@ -45,15 +45,15 @@ void plant_reset_magic(){
 	}
 }
 
-//original addr: 0x080008e0
+//original addr: $080008e0
 void setup_runtime() {
-	runtime.runtime_mode = MODE_HNS;
-	runtime.runtime_flags &= 0xfd;
+	runtime.mode = MODE_HNS;
+	runtime.flags &= 0xfd;
 	rand_init(4357);
 }
 
 //TODO: match functionality exactly
-//original addr: 0x08001718
+//original addr: $08001718
 void do_soft_reset() {
 	plant_reset_magic();
 	REG_SOUNDCNT_X = 0;
@@ -61,7 +61,7 @@ void do_soft_reset() {
 	SoftReset(0);
 }
 
-//original addr: 0x08000264
+//original addr: $08000264
 void main() {
 	//set up registers
 	REG_WAITCNT  = 0x45b4;
@@ -79,10 +79,8 @@ void main() {
 	setup_runtime();
 
 	if ((REG_KEYINPUT & 0x3ff) == 0xf){
-		runtime.runtime_flags |= 2;
+		runtime.flags |= 2;
 	}
-
-	bugcheck(10 / 2); //TODO: remove libgcc test
 
 	//TODO: rest of initialization
 

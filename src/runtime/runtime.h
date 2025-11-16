@@ -22,8 +22,8 @@ typedef __attribute__((mode(QI))) enum {
 } runtime_mode_t;
 
 typedef struct{
-    runtime_mode_t runtime_mode;
-    uint8_t runtime_flags;
+    runtime_mode_t mode;
+    uint8_t flags;
 } runtime_t;
 
 void rt_mode_naming();
