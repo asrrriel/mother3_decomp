@@ -30,6 +30,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.s
 rom: dirs gen/romhdr.o $(OBJ)
 	$(LD) -T link.ld -o rom.elf gen/romhdr.o $(shell find obj/ -name "*.o") $(LDFLAGS)
 	$(OBJCPY) -O binary rom.elf rom.gba
+	$(GBAFIX) rom.gba
 
 dirs:
 	mkdir -p obj 

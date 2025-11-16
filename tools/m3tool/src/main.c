@@ -138,13 +138,14 @@ bool extract_bin_blob(FILE* f, uint32_t offset, uint32_t size, char* where){
     FILE* newfile = fopen(where,"wb+");
 
     if(!newfile){
+        free(blob);
         return false;
     }
 
     fwrite(blob,size,1,newfile);
 
     fclose(newfile);
-
+    free(blob);
     return true;
 }
 
@@ -166,7 +167,7 @@ int main(int argc, char** argv){
     //print_enemy_data(f);
     //print_music_order(f);
 
-    extract_bin_blob(f, 0x1C8DE98, 0x14F4, "test/healthgfx.bin");
+    extract_bin_blob(f, 0x1C8DE98, 0x14D3, "test/healthgfx.bin");
 
     fclose(f);
 }

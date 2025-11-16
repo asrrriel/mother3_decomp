@@ -7,7 +7,7 @@
 #include <util/lowlevel.h>
 
 
-extern char health_gfx[0x14D3];
+extern char health_gfx;
 uint32_t press_any_button_graphic;
 
 //original addr: $0805a568

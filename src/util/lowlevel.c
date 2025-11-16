@@ -19,10 +19,6 @@ void do_swi_clear(void* addr, uint32_t size){
 	}
 }
 
-__attribute__((naked, target("arm"))) 
 void lz777_uncomp_vram(const void* src, void* dst) {
-    asm volatile(
-        "swi 0x12\n"           // call BIOS LZ77 decompress
-        "bx lr\n"
-    );
+	SystemCall(0x12);
 }
