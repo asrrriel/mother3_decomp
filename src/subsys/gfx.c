@@ -99,35 +99,34 @@ void* gfx_get_arr_data_ptr(void* ptr){
     return ptr + ((uint16_t*)ptr)[1];
 }
 
-//original address: $
+//original address: $08002abc
 void* gfx_get_arr_data_obj(void* ptr, uint16_t num){
     uint16_t i = 0;
-    uint16_t* p = &((uint16_t*)ptr)[1];
-    uint16_t* p2 = 0;
+    uint16_t* ent = &((uint16_t*)ptr)[1];
     do {
-        p2 = (uint16_t*)((uint8_t*)p + (*p * 3) + 1);
-        p  = (uint16_t*)((uint8_t*)p2  + (*p2 * 3) + 1);
+        ent = (uint16_t*)((uint8_t*)ent + (*ent * 6));
+        ent += 2;
+        ent = (uint16_t*)((uint8_t*)ent + (*ent * 6));
         i++;
     } while(i <= num);
 
-    return (void*)p2;
+    return (void*)ent;
 }
 
 //original address: $08000f04
 void* gfx_reserve_oam_sprites(void* staging, uint16_t num_sprites){
-    uint16_t* num_spr = staging + 0x2c48;
-    void* first_spr = staging + 0x2000 + (*num_spr * 8);
+    uint16_t* num_spr = (uint16_t*)((uint8_t*)staging + 0x2c48);
+    uint8_t* first_spr = staging + 0x2000 + (*num_spr * 8);
+    uint8_t* cur_spr = first_spr;
     if (num_sprites != 0){
         for(uint16_t i = 0; i < num_sprites; i++){
-            char* p = first_spr + i*8;
-
-            p[5] &= 0xf7;
-            p[1] &= 0xc0;
-            p[3] &= 0xc1;
-            p[6] = 0;
-            p[7] = 0;
+            cur_spr[5] &= 0xf7;
+            cur_spr[1] &= 0xc0;
+            cur_spr[3] &= 0xc1;
+            ((uint16_t*)cur_spr)[3] = 0;
 
             (*num_spr)++;
+            cur_spr += 8;
         }
     }
     return first_spr;
@@ -140,11 +139,11 @@ void gfx_display_complex_obj(uint16_t* arr_data, int16_t tile_base, uint32_t pal
 
     if(*arr_data != 0){
         for(uint16_t i = 0; i < *arr_data; i++){
-            dst[0] = (src[0] + base_y & 0xffU) | src[1] << 8;
-            dst[1] = base_x + src[1] | src[3] << 8;
-            dst[2] = tile_base + src[2] | (priority & 0xff) << 10 | (pal_num & 0xffff) << 0xc;
-            dst++;
-            src += 3;
+            dst[0] = (src[0] + (base_y & 0xffU)) | src[1] << 8;
+            dst[1] = (base_x + (((uint16_t*)src)[1] & 0x1ff)) | src[3] << 8;
+            dst[2] = (tile_base + (((uint16_t*)src)[2] & 0x3ff)) | (priority & 0xff) << 10 | pal_num << 0xc;
+            dst += 4;
+            src += 6;
         }
     }
 }
